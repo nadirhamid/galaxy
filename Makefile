@@ -11,21 +11,21 @@ deps:
 
 commander:
 	echo "Building commander"
-	go install -ldflags "$(LDFLAGS)" github.com/litl/galaxy/cmd/commander
+	go install -ldflags "$(LDFLAGS)" github.com/nadirhamid/galaxy/cmd/commander
 
 galaxy:
 	echo "Building galaxy"
-	go install -ldflags "$(LDFLAGS)" github.com/litl/galaxy
+	go install -ldflags "$(LDFLAGS)" github.com/nadirhamid/galaxy
 
 clean: dist-clean
 	rm -f $(GOPATH)/bin/commander
 	rm -f $(GOPATH)/bin/galaxy
 
 fmt:
-	go fmt github.com/litl/galaxy/...
+	go fmt github.com/nadirhamid/galaxy/...
 
 test:
-	go test -v github.com/litl/galaxy/...
+	go test -v github.com/nadirhamid/galaxy/...
 
 dist-clean:
 	rm -rf dist
@@ -36,8 +36,8 @@ dist-init:
 
 dist-build: dist-init
 	echo "Compiling $$GOOS/$$GOARCH"
-	go build -ldflags "$(LDFLAGS)" -o dist/$$GOOS/$$GOARCH/galaxy github.com/litl/galaxy
-	go build -ldflags "$(LDFLAGS)" -o dist/$$GOOS/$$GOARCH/commander github.com/litl/galaxy/cmd/commander
+	go build -ldflags "$(LDFLAGS)" -o dist/$$GOOS/$$GOARCH/galaxy github.com/nadirhamid/galaxy
+	go build -ldflags "$(LDFLAGS)" -o dist/$$GOOS/$$GOARCH/commander github.com/nadirhamid/galaxy/cmd/commander
 
 dist-linux-amd64:
 	export GOOS="linux"; \

@@ -6,3 +6,4 @@ github.com/garyburd/redigo 535138d7bcd717d6531c701ef5933d98b1866257
 github.com/hashicorp/consul a02ba028156e7b4db52a1e090394568aa4a3def8
 github.com/litl/shuttle 2f96e5ace416402767cb59dca49e788f983fe35e
 github.com/ryanuber/columnize 44cb4788b2ec3c3d158dd3d1b50aba7d66f4b59a
+github.com/kataras/iris 976b4042c5b5ac0bfdb3c5eea55fc465171fa626

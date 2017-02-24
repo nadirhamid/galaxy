@@ -11,7 +11,7 @@ import (
 // Interface to wrap AppConfig, so that it can be swapped out with a different
 // Backend. This should be temporary as many of these methods won't be useful.
 type App interface {
-	Name() string
+	Name() string `json:"name"`
 	Env() map[string]string
 	EnvSet(key, value string)
 	EnvGet(key string) string
@@ -35,7 +35,7 @@ type App interface {
 type AppConfig struct {
 	// ID is used for ordering and conflict resolution.
 	// Usualy set to time.Now().UnixNano()
-	name            string `redis:"name"`
+	name            string `redis:"name" json:"name"`
 	versionVMap     *utils.VersionedMap
 	environmentVMap *utils.VersionedMap
 	portsVMap       *utils.VersionedMap
