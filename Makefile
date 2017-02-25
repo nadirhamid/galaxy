@@ -13,6 +13,10 @@ commander:
 	echo "Building commander"
 	go install -ldflags "$(LDFLAGS)" github.com/nadirhamid/galaxy/cmd/commander
 
+commander-api:
+	echo "Building commander API"
+	go install -ldflags "$(LDFLAGS)" github.com/nadirhamid/galaxy/api/commander
+
 galaxy:
 	echo "Building galaxy"
 	go install -ldflags "$(LDFLAGS)" github.com/nadirhamid/galaxy
