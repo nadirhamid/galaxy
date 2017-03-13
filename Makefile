@@ -15,7 +15,7 @@ commander:
 
 commander-api:
 	echo "Building commander API"
-	go install -ldflags "$(LDFLAGS)" github.com/nadirhamid/galaxy/api/commander
+	go build -i -o $(GOPATH)/bin/commander-api -ldflags "$(LDFLAGS)" github.com/nadirhamid/galaxy/api/commander
 
 galaxy:
 	echo "Building galaxy"
