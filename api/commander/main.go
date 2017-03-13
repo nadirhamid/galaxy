@@ -577,7 +577,8 @@ var (
 	env            string
 	pool           string
 	registryURL    string
-	apiPort        int
+	apiPort        string
+	apiHost        string
 	loop           bool
 	dns            string
 	hostIP            string
@@ -601,8 +602,8 @@ func main() {
 	env=utils.GetEnv("GALAXY_ENV", "")
 	pool=utils.GetEnv("GALAXY_POOL", "")
         apiPort=utils.GetEnv("GALAXY_API_PORT", "7200")
+        apiHost=utils.GetEnv("GALAXY_API_HOST", "127.0.0.1")
 	dns=""
-	hostIP="127.0.0.1"
 
 	initOrDie()
 
@@ -633,5 +634,5 @@ func main() {
 	api.Post("/app/:name/runtime/:param", AppRuntimeSet)
 
 	api.Get("/app/:name/hosts", AppHosts)
-	api.Listen(":"+apiPort)
+	api.Listen(apiHost+":"+apiPort)
 }
